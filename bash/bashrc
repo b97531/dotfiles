@@ -1,0 +1,87 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+
+xrdb -merge ~/.Xresources
+
+AVRLIB=~/code/avr-liberty/src/
+
+# set colors. 
+COL_VERT='1;32'
+
+COL_PY='38;5;45'
+COL_C='38;5;39'
+COL_PROG='38;5;30'
+COL_PDF='1;32 '
+COL_EX='38;5;63' 
+COL_IMG='38;5;176'
+COL_PDF='38;5;217'
+
+
+
+PS1='\[\e[${COL_VERT}m\][\u@\h \W]\$\[\e[0m\] '
+export EDITOR="vim"
+#export PAGER="less"
+
+export PATH=$HOME/Qt/Tools/QtCreator/bin/:$HOME/Qt/5.6/gcc_64/bin/:$PATH:/usr/bin/vendor_perl:~/bin:$HOME/embeded/compiler/gcc-arm-none-eabi-4_9-2015q3/bin:$HOME/.gem/ruby/2.3.0/bin
+
+
+# Make Bash append rather than overwrite the history on disk: 
+shopt -s histappend
+# Whenever displaying the prompt, write the previous line to disk: 
+PROMPT_COMMAND='history -a'
+
+source ~/.aliases
+#source ~/.paliases
+export PRINTER=HP_LaserJet_CM1415fnw:
+
+
+source /usr/share/git/completion/git-completion.bash
+set -o emacs
+complete -cf sudo
+
+LS_COLORS="di=1:fi=0:ln=1;35:pi=5:so=36:bd=42:cd=1;32:or=31:mi=0:ex=${COL_EX}:*.py=${COL_PY}:*.c=${COL_C}:*.cpp=${COL_C}:*.sh=${COL_PROG}:*.glo=${COL_PROG}:*.pdf=${COL_PDF}:*.jpg=${COL_IMG}"
+
+export LS_COLORS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ex - archive extractor
+# usage: ex <file>
+ex ()
+{
+if [ -f $1 ] ; then
+case $1 in
+*.tar.bz2) tar xjfv $1 ;;
+*.tar.gz) tar xzfv $1 ;;
+*.bz2) bunzip2 $1 ;;
+*.rar) unrar x $1 ;;
+*.gz) gunzip $1 ;;
+*.tar) tar xfv $1 ;;
+*.tbz2) tar xjfv $1 ;;
+*.tgz) tar xzfv $1 ;;
+*.zip) unzip $1 ;;
+*.Z) uncompress $1;;
+*.7z) 7z x $1 ;;
+*) echo "'$1' cannot be extracted via ex()" ;;
+esac
+else
+echo "'$1' is not a valid file"
+fi
+}
+

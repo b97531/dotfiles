@@ -1,0 +1,9 @@
+"#############################
+"# General system-wide setup #
+"#############################
+
+" that changes often
+""""""""""""""""""""
+colorscheme wombat
+
+

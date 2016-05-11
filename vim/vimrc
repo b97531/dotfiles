@@ -1,0 +1,61 @@
+"#############################
+"# General system-wide setup #
+"#############################
+
+
+" that changes often
+"-------------------
+colorscheme wombat256
+
+" default choice feature
+"-----------------------
+set ignorecase
+"Override ignorecase if the search pattern contains upper case.
+set smartcase
+set incsearch
+set hlsearch
+
+" essential features
+"-------------------
+set nocompatible
+let mapleader = ","
+let maplocalleader = ","
+syntax on
+set nu
+set mouse=a
+set dir=~/tmp
+
+
+"##############################
+"# Key mappings for my macros #
+"##############################
+
+" cd like cmd 
+map ,cd :cd %:p:h<CR>:pwd<CR>
+
+" Bind jj for esc
+imap jj <Esc>:echo "-- NORMAL MODE --"<CR>
+
+au filetype python      set omnifunc=pythoncomplete#Complete shiftwidth=4 tabstop=4 softtabstop=4
+au filetype c           set omnifunc=ccomplete#Complete shiftwidth=8 tabstop=8 softtabstop=8 noexpandtab
+au filetype glo        	set omnifunc=xmlcomplete#CompleteTags
+
+"#############################
+"# Script-specific settings  #
+"#############################
+
+"#############################
+"# Playground                #
+"#############################
+nmap <F9> <C-]>
+map! <F9> <C-]>
+
+"#############################
+"# Includes                  #
+"#############################
+
+source $HOME/.vim/test.vim
+
+
+
+
