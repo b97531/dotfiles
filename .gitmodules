@@ -10,3 +10,21 @@
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/c.vim"]
+	path = vim/bundle/c.vim
+	url = https://github.com/vim-scripts/c.vim.git
+[submodule "vim/bundle/bash-support.vim"]
+	path = vim/bundle/bash-support.vim
+	url = https://github.com/vim-scripts/bash-support.vim.git
+[submodule "vim/bundle/Vim-Support"]
+	path = vim/bundle/Vim-Support
+	url = https://github.com/vim-scripts/Vim-Support.git
+[submodule "vim/bundle/awk-support.vim"]
+	path = vim/bundle/awk-support.vim
+	url = https://github.com/vim-scripts/awk-support.vim.git
+[submodule "vim/bundle/Colour-Sampler-Pack"]
+	path = vim/bundle/Colour-Sampler-Pack
+	url = https://github.com/vim-scripts/Colour-Sampler-Pack.git
+[submodule "vim/bundle/ScrollColors"]
+	path = vim/bundle/ScrollColors
+	url = https://github.com/vim-scripts/ScrollColors.git

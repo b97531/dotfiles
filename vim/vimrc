@@ -10,13 +10,14 @@ endfunction
 
 " that changes often
 "===================
-colorscheme wombat256
+color wombat256
+"set background=light
+
+
 "set visualbell
 
 " default choice feature
 "=======================
-set background=dark
-"set background=light
 
 " Search
 "-------
@@ -55,8 +56,8 @@ set dir=~/tmp
 " Spell checking
 "---------------
 " Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
-map <leader>s  :set spelllang=fr spell<cr>
+map ;ss :setlocal spell!<cr>
+map ;s  :set spelllang=fr spell<cr>
 "spell search forward
 map zn  ]s
 "spell search backward
@@ -80,11 +81,11 @@ else
 endif
 
 " Edit vimrc
-map <leader>ev :e! ~/.vimrc<cr>
-map <leader>sv :source ~/.vimrc<cr>
+map ;ev :e! ~/.vimrc<cr>
+map ;sv :source ~/.vimrc<cr>
 
 " cd like cmd 
-map ,cd :cd %:p:h<CR>:pwd<CR>
+map ;cd :cd %:p:h<CR>:pwd<CR>
 
 " Bind jj for esc
 imap jj <Esc>:echo "-- NORMAL MODE --"<CR>
@@ -128,7 +129,4 @@ map! <F9> <C-]>
 "#############################
 
 source $HOME/.vim/test.vim
-
-
-
 
