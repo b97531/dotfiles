@@ -1,0 +1,75 @@
+#!/bin/bash 
+#===============================================================================
+#
+#          FILE: install_vim_plugin
+# 
+#         USAGE: install_vim_plugin "https://path/to_git/plugin.git" 
+# 
+#   DESCRIPTION: 
+#                - The default path is ~/dotfiles.
+#                - The default name for the plugin is the git path cleaned
+#                  ex : "https://path/to_git/plugin.git" give "plugin"
+#
+# 
+#       OPTIONS: --name "plugin_name"
+#                --path "~/dotfiles"
+#  REQUIREMENTS: git dotfile
+#          BUGS: ---
+#         NOTES: ---
+#        AUTHOR: Barattero Laurent 
+#  ORGANIZATION: 
+#       CREATED: 11/05/2016 06:33:15 CEST
+#      REVISION: 0.0
+#===============================================================================
+
+
+
+while getopts "vhg:n:p:-:" opt ; do
+    if [ "$opt" = "-" ] ; then
+        case $OPTARG in 
+            help ) opt=h ;;
+            version ) opt=v ;;
+	    * ) echo "Unknow option :  $OPTARG" ; opt=?  ;;
+        esac
+    fi
+    case $opt  in
+        g ) opt_git_plugin_path=$OPTARG ;;
+        n ) opt_plugin_name=$OPTARG ;;
+        p ) opt_dotfile_path=$OPTARG ;;
+        v ) echo "version" ;;
+        h ) echo "help" ;;
+        ? ) echo echo " usage : install_vim_plugin [-g git/path/plugin.git ]"
+            exit 1
+    esac    
+done
+
+
+
+
+
+
+
+
+
+
+#plugin_git_adress="https://github.com/vim-scripts/The-NERD-tree.git"
+dotfile_path=${opt_dotfile_path=~/dotfiles}
+plugin_git_adress=$opt_git_plugin_path
+relative_path_submodule=${opt_relative_path_submodule="./vim/bundle"}
+
+# add if name plugin non define on arg line
+plugin_name=${plugin_git_adress##*/}
+plugin_name=${plugin_name%.*}
+
+echo "Dotfiles path:          " $dotfile_path 
+echo "Relative submodule path:" $relative_path_submodule
+echo "git plugin adress:      " $plugin_git_adress
+echo "Plugin name:            " $plugin_name 
+
+
+
+
+# Process
+
+cd $dotfile_path
+git submodule add $plugin_git_adress $relative_path_submodule"/"$plugin_name 

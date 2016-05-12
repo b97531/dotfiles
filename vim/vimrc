@@ -2,21 +2,48 @@
 "# General system-wide setup #
 "#############################
 
+function ResetAll()
+  let @/ = ""
+  echo "function ResetAll"
+endfunction
+
 
 " that changes often
-"-------------------
+"===================
 colorscheme wombat256
+"set visualbell
 
 " default choice feature
-"-----------------------
+"=======================
+set background=dark
+"set background=light
+
+" Search
+"-------
 set ignorecase
 "Override ignorecase if the search pattern contains upper case.
 set smartcase
 set incsearch
 set hlsearch
 
+" Indentation
+"------------
+"set smartindent
+set autoindent
+set expandtab 
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+"set smarttab " is it useful ?
+
+" that Not ! changes often
+"-------------------------
+set backspace=2
+set encoding=utf8
+
+
 " essential features
-"-------------------
+"===================
 set nocompatible
 let mapleader = ","
 let maplocalleader = ","
@@ -25,10 +52,36 @@ set nu
 set mouse=a
 set dir=~/tmp
 
+" Spell checking
+"---------------
+" Pressing ,ss will toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
+map <leader>s  :set spelllang=fr spell<cr>
+"spell search forward
+map zn  ]s
+"spell search backward
+map ZN  [s
+" spellchecking
+set spellfile=~/.vim/spell/fr.utf-8.add
+set spellsuggest=10
 
 "##############################
 "# Key mappings for my macros #
 "##############################
+map <M-F12> :call ResetAll()<CR>
+
+" close help
+set  <S-F1>=^[[1;2P
+
+if has("gui_running")
+  map <S-F1> <Esc>:helpclose<CR>
+else
+  map [23~ <Esc>:helpclose<CR>
+endif
+
+" Edit vimrc
+map <leader>ev :e! ~/.vimrc<cr>
+map <leader>sv :source ~/.vimrc<cr>
 
 " cd like cmd 
 map ,cd :cd %:p:h<CR>:pwd<CR>
@@ -43,6 +96,26 @@ au filetype glo        	set omnifunc=xmlcomplete#CompleteTags
 "#############################
 "# Script-specific settings  #
 "#############################
+
+" Patogen -  Load bundled plugins
+"--------------------------------
+call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
+call pathogen#helptags()
+
+
+" Ctag
+"=====
+map <F7> <Esc>:TlistToggle<CR>
+
+" Plugin Project
+"===============
+map <F8> <Esc>:Project<CR>
+
+" NerdTree
+"=========
+map <F9> <Esc>:NERDTreeToggle<CR>
+let NERDTreeShowBookmarks=1
 
 "#############################
 "# Playground                #

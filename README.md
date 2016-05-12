@@ -5,7 +5,6 @@ Config files management for vim, bash...
 
 ## Installation ##
 
-
 	git clone https://github.com/b97531/dotfiles.git
 	cd dotfiles
 	git submodule init
@@ -17,8 +16,12 @@ Config files management for vim, bash...
 	ln -s ~/dotfiles/vim/gvimrc ~/.gvimrc
 	ln -s ~/dotfiles/vim ~/.vim
 
-	# some directory must exist :
+	# Some directory must exist :
 	mkdir ~/tmp
+  
+  # Scripts executable
+  chmod +x script/*
+  
 
 ## Adding Plugin Bundles for Vim ##
 
