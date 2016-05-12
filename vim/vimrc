@@ -93,6 +93,7 @@ imap jj <Esc>:echo "-- NORMAL MODE --"<CR>
 au filetype python      set omnifunc=pythoncomplete#Complete shiftwidth=4 tabstop=4 softtabstop=4
 au filetype c           set omnifunc=ccomplete#Complete shiftwidth=8 tabstop=8 softtabstop=8 noexpandtab
 au filetype glo        	set omnifunc=xmlcomplete#CompleteTags
+au filetype make        set noexpandtab shiftwidth=8 softtabstop=0
 
 "#############################
 "# Script-specific settings  #

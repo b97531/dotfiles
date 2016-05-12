@@ -28,3 +28,6 @@
 [submodule "vim/bundle/ScrollColors"]
 	path = vim/bundle/ScrollColors
 	url = https://github.com/vim-scripts/ScrollColors.git
+[submodule "vim/bundle/vim-syntax-extra"]
+	path = vim/bundle/vim-syntax-extra
+	url = https://github.com/justinmk/vim-syntax-extra.git
