@@ -1,3 +1,13 @@
+"#########
+"# First #
+"#########
+
+" Patogen -  Load bundled plugins
+"--------------------------------
+call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
+call pathogen#helptags()
+
 "#############################
 "# General system-wide setup #
 "#############################
@@ -12,6 +22,7 @@ endfunction
 "===================
 color wombat256
 "set background=light
+set background=dark
 
 
 "set visualbell
@@ -99,11 +110,6 @@ au filetype make        set noexpandtab shiftwidth=8 softtabstop=0
 "# Script-specific settings  #
 "#############################
 
-" Patogen -  Load bundled plugins
-"--------------------------------
-call pathogen#runtime_append_all_bundles()
-call pathogen#infect()
-call pathogen#helptags()
 
 
 " Ctag
