@@ -43,16 +43,8 @@ while getopts "vhg:n:p:-:" opt ; do
     esac    
 done
 
-
-
-
-
-
-
-
-
-
 #plugin_git_adress="https://github.com/vim-scripts/The-NERD-tree.git"
+
 dotfile_path=${opt_dotfile_path=~/dotfiles}
 plugin_git_adress=$opt_git_plugin_path
 relative_path_submodule=${opt_relative_path_submodule="./vim/bundle"}
