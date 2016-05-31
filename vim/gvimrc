@@ -6,4 +6,4 @@
 """"""""""""""""""""
 colorscheme wombat
 
-
+:set guioptions-=T

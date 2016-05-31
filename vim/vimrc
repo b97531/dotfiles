@@ -12,9 +12,9 @@ call pathogen#helptags()
 "# General system-wide setup #
 "#############################
 
-function ResetAll()
+function ZResetAll()
   let @/ = ""
-  echo "function ResetAll"
+  echo "function ZResetAll"
 endfunction
 
 
@@ -81,7 +81,7 @@ set spellsuggest=10
 "##############################
 "# Key mappings for my macros #
 "##############################
-map <M-F12> :call ResetAll()<CR>
+map <M-F12> :call ZResetAll()<CR>
 
 " close help
 set  <S-F1>=^[[1;2P

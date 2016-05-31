@@ -35,8 +35,13 @@ shopt -s histappend
 # Whenever displaying the prompt, write the previous line to disk: 
 PROMPT_COMMAND='history -a'
 
+
 source ~/.aliases
-#source ~/.paliases
+
+if [ -e ~/.paliases ] ; then
+  source ~/.paliases
+fi
+
 export PRINTER=HP_LaserJet_CM1415fnw:
 
 
